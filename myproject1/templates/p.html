@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ jj }}图表分析</title>
+    <link rel="shortcut icon" href="{% static 'img/aa.png' %}">
+</head>
+<body style="background-color: #1F383F">
+<h3 style="color: snow">{{ jj }}图表</h3><br>
+<div style="background-color: snow;font-size: 18px;border-radius: .25rem;padding: .75rem 1rem;width:117%" >
+
+    <a href="Index#our-story">返回主界面</a>
+</div>
+    <br>
+
+<span title="招聘类型饼状图"><img src="{{ imd }}"></span>
+<span title="2019上半年招聘人数折线图"><img src="{{ imd4 }}"></span>
+<div title="城市—招聘公司柱状图"><img src="{{ imd1 }}"></div>
+<div title="城市—招聘职位数柱状图"><img src="{{ imd2 }}"></div>
+<div title="城市—招聘人数柱状图"><img src="{{ imd3 }}"></div>
+</body>
+</html>

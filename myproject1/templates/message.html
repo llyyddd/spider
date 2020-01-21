@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户反馈信息 </title>
+    <link rel="shortcut icon" href="{% static 'img/aa.png' %}">
+    <link rel="stylesheet" href="{% static 'css/a.css' %}">
+</head>
+<body background="b.jpg">
+<div><a href="admin"><h3>返回主界面</h3></a></div>
+<table border="1" cellspacing="0" cellpadding="0" align="center" width="100%" >
+    <thead>
+       <tr>
+           <th>用户名</th>
+           <th>邮箱</th>
+           <th>用户反馈信息</th>
+           <th>      </th>
+       </tr>
+    </thead>
+    <tbody>
+    {% for m in ms %}
+        <tr class="aa">
+            <td>{{ m.name }}</td>
+            <td>{{ m.email }}</td>
+            <td>{{ m.concent }}</td>
+            <td><a href="/delete?id={{m.messageid}}">删除</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% if messages %}
+    <script>
+        {% for msg in messages %}
+            alert('{{ msg.message }}');
+        {% endfor %}
+    </script>
+{% endif %}
+<script src="{% static 'js/jquery-1.8.0.js' %}"></script>
+<script>
+    $(".aa").mouseover(function () {
+        $(this).css({background:"#E6E6FA"})
+    }).mouseout(function () {
+        $(this).css({background:""})
+    })
+</script>
+<script>
+    function f() {
+        var cc=document.getElementsByClassName("c")
+        alert(cc)
+        window.location.href="delete?c="+cc
+    }
+</script>
+</body>
+</html>

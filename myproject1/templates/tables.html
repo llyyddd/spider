@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{{ c_job }}{{ s_job }}数据</title>
+  <link rel="shortcut icon" href="{% static 'img/aa.png' %}">
+  <!-- Bootstrap core CSS-->
+  <link href="{% static 'css/bootstrap2.min.css' %}" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="{% static 'css/font-awesome2.min.css' %}" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="{% static 'css/dataTables.bootstrap4.css' %}" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+
+
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="Index#services">返回主界面</a><br>
+        </li>
+
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i>{{ c_job }}{{ s_job }} 数据</div>
+          <i><input type="button" onclick="f()"  value="重新获取" style="float: right"></i>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            {% if messages %}
+                 <script>
+                     {% for msg in messages %}
+                         alert('{{ msg.message }}');
+                     {% endfor %}
+                 </script>
+            {% endif %}
+              <thead>
+                <tr>
+                  <th>发布时间</th>
+                  <th>职位</th>
+                  <th>公司</th>
+                  <th>职务类型</th>
+                  <th>需求人数</th>
+                  <th>城市</th>
+
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>发布时间</th>
+                  <th>职位</th>
+                  <th>公司</th>
+                  <th>职务类型</th>
+                  <th>需求人数</th>
+                  <th>城市</th>
+                </tr>
+              </tfoot>
+              <tbody>
+              {% for job in jobs %}
+                  <tr>
+                      <td>{{ job.pubtime }}</td>
+                      <td>{{ job.jobname }}</td>
+                      <td>{{ job.company }}</td>
+                      <td>{{ job.jobtype }}</td>
+                      <td>{{ job.neednum }}</td>
+                      <td>{{ job.city }}</td>
+                  </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="{% static 'js/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'js/dataTables.bootstrap4.js' %}"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'js/sb-admin.min.js' %}"></script>
+    <!-- Custom scripts for this page-->
+    <script src="{% static 'js/sb-admin-datatables.min.js' %}"></script>
+      </div></div>
+    <script>
+        function f() {
+             var URL = window.location.search; //？showJob=XXX  形式
+             URL = URL.split('?')[1]; //获取参数列表
+             var params = URL.split('=');
+             var temp=params[1].toString();
+             console.log(params[1])
+             j=encodeURI(temp);
+             console.log(j)
+             window.location.href="tables?j="+j
+        }
+    </script>
+</body>
+
+</html>

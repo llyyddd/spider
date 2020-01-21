@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>RECRUITING DATA ANALYSIS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{% static 'img/aa.png' %}">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}">
+        <link rel="stylesheet" href="{% static 'css/hero-slider.css' %}">
+        <link rel="stylesheet" href="{% static 'css/templatemo-main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+    </head>
+<body>
+
+    <div class="fixed-side-navbar">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#home"><span>主页</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#services"><span>数据</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#our-story"><span>图表分析</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-us"><span>反馈信息</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html"><span>退出</span></a></li>
+        </ul>
+    </div>
+
+    <div class="parallax-content baner-content" id="home">
+        <div class="container">
+            <div class="first-content">
+                <h1>就业信息</h1>
+                <span><em>数据分析</em> v4.2.1 Theme</span>
+                <div class="primary-button">
+                    <a href="#services"><h6>了解更多</h6></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="service-content" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="left-text">
+                        <h4>数据</h4>
+                        <div class="line-dec"></div>
+                        <p>随着互联网技术的发展，网络信息过载已经成为不争的事实。因此，如何有效提取互联 网信息，并将这些信息充分利用已经成为一个巨大的挑战 ，欢迎您使用此网站</p>
+                        <ul>
+                            <li>-  客观显示招聘数据</li>
+                            <li>-  生成图表便于分析</li>
+                            <li>-  实时获取最新记录</li>
+                            <li>-  用户反馈及时响应</li>
+                        </ul>
+                        <div class="primary-button">
+                            <a href="#our-story">查看图表信息</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="service-item">
+
+                                    <input type="button" name="job" value="人工智能" style="background:transparent;border-color:transparent;height:30px;width: 100px;color: #3CC;font-size: 18px;" onclick="f1()">
+                                    <div class="line-dec"></div>
+                                    <p>人工智能目前是一个快速增长的领域，人才需求量大，相比于其他技术岗位，竞争度偏低，薪资相对较高。</p>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <input type="button" name="job" value="大数据" style="background:transparent;border-color:transparent;height:30px;width: 100px;color: #3CC;font-size: 18px;" onclick="f2()">
+                                    <div class="line-dec"></div>
+                                <p>大数据分析已广泛应用于各个领域，无论是国家政府部门、企事业单位，大数据分析都是进行决策和制作决定的重要环节。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <input type="button" name="job" value="嵌入式开发" style="background:transparent;border-color:transparent;height:30px;width: 100px;color: #3CC;font-size: 18px;" onclick="f3()">
+                                    <div class="line-dec"></div>
+                                <p>嵌入式应用的行业范围很广， 所以说嵌入式开发很有前途 比如通信行业 ,消费电子行业。<br><br></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <input type="button" name="job" value="Python" style="background:transparent;border-color:transparent;height:30px;width: 100px;color: #3CC;font-size: 18px;" onclick="f4()">
+                                    <div class="line-dec"></div>
+                                <p>豆瓣、Facebook、twitter均是用Python搭建的实际Python是国外包括Google在内等大公司使用的主要语言。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tabs-content" id="our-story">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <input type="button" value="显示总体概要信息" class="bt"  style="background:transparent;border:5px solid snow;height:50px;width: 150px;color:snow;font-size: 10px;border-radius:28px;display:block;margin:0 auto">
+                    <input type="button" value="收起" class="bb"  style="background:transparent;border:5px solid snow;height:50px;width: 150px;color:snow;font-size: 10px;border-radius:28px;display:block;margin:0 auto;display: none">
+                    <div style="display: none" class="aa"><img src="{% static 'img/h.png' %}"></div>
+                    <div class="wrapper">
+                     <ul class="tabs clearfix" data-tabgroup="first-tab-group"><br><br><br><br><br><br>
+                      <li><input type="button" value="详情->人工智能" onclick="ff1()" style="background:transparent;border:5px solid snow;height:150px;width: 300px;color:snow;font-size: 18px;border-radius:28px;"></li>
+                      <li><input type="button" value="详情->大 数 据" onclick="ff2()" style="background:transparent;border:5px solid snow;height:150px;width: 300px;color:snow;font-size: 18px;border-radius:28px;"></li><br>
+                      <li><input type="button" value="详情->嵌入式" onclick="ff3()" style="background:transparent;border:5px solid snow;height:150px;width: 300px;color:snow;font-size: 18px;border-radius:28px;"></li>
+                      <li><input type="button" value="详情->Python" onclick="ff4()" style="background:transparent;border:5px solid snow;height:150px;width: 300px;color:snow;font-size: 18px;border-radius:28px;"></li>
+                    </ul>
+                </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="parallax-content contact-content" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <div class="row">
+                            <form id="contact" action="Smessage" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <input name="n" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required></textarea>
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <button type="submit" id="form-submit" class="btn">反馈信息</button>
+                                      </fieldset>
+                                    </div>
+                                </div>
+                                {% if messages %}
+                                   <script>
+                                   {% for msg in messages %}
+                                          alert('{{ msg.message }}');
+                                   {% endfor %}
+                                   </script>
+                                {% endif %}
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="primary-button">
+                        <a href="#home">回到顶部</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"><\/script>')</script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/jquery-1.8.0.js' %}"></script>
+    <script>
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+               x[i].style.display = "none";  
+            }
+            document.getElementById(cityName).style.display = "block";  
+        }
+    </script>
+
+    <script>
+        $(document).ready(function(){
+          // Add smooth scrolling to all links
+          $(".fixed-side-navbar a, .primary-button a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+
+              // Store hash
+              var hash = this.hash;
+
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+        });
+    </script>
+    <script>
+        function f1() {
+            window.location.href="tables.html?showjob=人工智能"
+        }
+        function f2() {
+            window.location.href="tables.html?showjob=大数据"
+        }
+        function f3() {
+            window.location.href="tables.html?showjob=嵌入式"
+        }
+        function f4() {
+            window.location.href="tables.html?showjob=Python"
+        }
+    </script>
+    <script>
+        function ff1() {
+            window.location.href="p.html?job=人工智能"
+        }
+        function ff2() {
+            window.location.href="p.html?job=大数据"
+        }
+        function ff3() {
+            window.location.href="p.html?job=嵌入式"
+        }
+        function ff4() {
+            window.location.href="p.html?job=Python"
+        }
+    </script>
+  <script src="{% static 'js/jquery-1.8.0.js' %}"></script>
+  <script>
+      $(".bt").click(function() {
+        $(".aa").css({display:"block"})
+        $(".bb").css({display:"block"})
+        $(this).css({display:"none"})
+      })
+      $(".bb").click(function() {
+        $(".aa").css({display:"none"})
+        $(".bt").css({display:"block"})
+        $(this).css({display:"none"})
+      })
+  </script>
+</body>
+</html>
